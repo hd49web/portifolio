@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<link rel="stylesheet" type="text/css" href="css/estilo1.css">
+<link rel="stylesheet" type="text/css" href="js/script.js">
+<link rel="stylesheet" type="text/css" href="js/vanilla-tilt.min.js">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap" rel="stylesheet">
+<script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
+<head>
+	<title>animação andando</title>
+<style type="text/css">
+	
+#menu{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	background:  #162c3b;
+	z-index: 1000;
+}
+ul{
+	list-style: none;
+	display: flex;
+	justify-content: right;
+	align-items: center;
+	height: 100%;
+	margin: 0;
+	margin-right: 80px;
+	font-size: 20px;
+}
+li{
+	margin-right: 25px;
+}
+a{
+	color: #fff;
+	text-decoration: none;
+}
+
+
+</style>
+</head>
+<body>
+
+<div id="menu">
+<ul>
+<li><a href="index.html">INICIO</a></li>
+<li><a href="trabalho.html">PROJETOS</a></li>
+
+<li><a href="certificados.html">CERTIFICADOS</a></li>
+
+</ul>
+</div>
+
+
+<div class="titulo">
+<h1>CSS - ANIMAÇÕES</h1>
+
+</div>
+<div class="container">
+<div class="row"> 
+<div class="hum">
+	<section> 
+	<div id="animation">
+	<!--img src="img/rua.png"-->
+	</div>
+	</section>
+</div> 
+
+<div class="dois">
+<input id= "hamburguer"type="checkbox" style="display:none;">
+<label for= "hamburguer">
+	<div class= "hamburguer"></div>
+</label>
+</div>
+</div>
+</div>
+
+<div class="container">
+	<div class="row">
+<div class="treis">
+	
+	<div class='containerC'>
+		<div class="circle circle1"></div>
+		<div class="circle circle2"></div>
+	</div>
+
+	<svg>
+		<filter id= "gooey">
+			<feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+			<feColorMatrix values="
+			1 0 0 0 0
+			0 1 0 0 0
+			0 0 1 0 0
+			0 0 0 20 -10
+			"/>
+	</filter>
+	</svg>
+</div>
+<div class="quatro">
+	<div class="heart"></div>
+</div>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+
+<div class="cinco">	
+
+<img src="img/10.jpg">
+<p>clique <br>na foto</p>
+<div id="bg"></div>
+
+<script type="text/javascript">
+	const bg = document.getElementById('bg');
+	function randomColor(){
+		return Math.floor(Math.random() * 255);
+	}
+bg.addEventListener('click',() => {
+bg.style.backgroundColor = 'rgba('+randomColor()+','+randomColor()+','+randomColor()+')'})
+</script>
+
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+
+<div class="oito">
+	
+
+<div class="box">
+<div>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>	
+</div>	
+
+</div>	
+</div>	
+</div>
+
+
+<div class="container">
+<div class="row">
+<div class="sete">
+<div class="quadro">
+
+	 <img src="gif/andando.gif" class="andando">
+     <img src="gif/deolho.gif" class="deolho" >
+
+</div>
+</div>
+</div>
+</div>
+<script src="script.js"></script>
+<script>
+	   
+const andando = document.querySelector('.andando');
+const deolho = document.querySelector('.deolho');
+
+const loop = setInterval(() => {
+const andandoPosition = andando.offsetLeft;
+const deolhoPosition = deolho.offsetLeft;
+if(andandoPosition == 400 ){
+    
+clearInterval(loop);
+
+    andando.src ="gif/caobravo.gif";
+    andando.style.width='150px'
+    andando.style.left = '400px'
+    andando.style.animation='none';
+    
+    deolho.src='gif/gatoolho.gif';
+    deolho.style.width='100px'
+    deolho.style.left = '10px'
+    deolho.style.animation="none";
+}
+}, 10) ;
+
+setTimeout(function(){
+    if(andando <="caobravo.gif"){
+    andando.src= 'gif/correndo.gif';
+    andando.style.width='180px';
+    deolho.src ='gif/assustado.gif';
+    deolho.style.width ='150px';
+    }
+},18000);
+
+setTimeout(function(){
+    if(andando <="correndo.gif"){
+    andando.src= 'gif/correndo.gif';
+    deolho.src ='gif/gatobravo.gif';
+    
+    }
+},20000);
+setTimeout(function(){
+    if(andando <="correndo.gif"){
+    andando.src= 'gif/late.gif';
+    andando.style.width='130px';
+    deolho.src ='gif/gatoolho.gif';
+    deolho.style.width='195px';
+    }
+},22000);
+
+</script>
+
+<div class="enquadro">
+<div class="moto">
+<div class="containerM">
+	<div class="boxm">
+		<h2 class="name">PRODUTO</h2>
+		<a href="#" class="buy">Compre Agora</a>
+		<div class="circle"></div>
+		<img src="img/cap.png" class="product">
+	</div>
+        <div class="boxm">
+		<h2 class="name">PRODUTO</h2>
+		<a href="#" class="buy">Compre Agora</a>
+		<div class="circle"></div>
+		<img src="img/cap1.png" class="product">
+			</div>
+		<div class="boxm">
+		<h2 class="name">PRODUTO</h2>
+		<a href="#" class="buy">Compre Agora</a>
+		<div class="circle"></div>
+		<img src="img/cap2.png" class="product">
+	</div>
+		<div class="boxm">
+		<h2 class="name">PRODUTO</h2>
+		<a href="#" class="buy">Compre Agora</a>
+		<div class="circle"></div>
+		<img src="img/cap3.png" class="product">
+	</div>
+        <div class="boxm">
+		<h2 class="name">PRODUTO</h2>
+		<a href="#" class="buy">Compre Agora</a>
+		<div class="circle"></div>
+		<img src="img/cap4.png" class="product">
+			</div>
+		<div class="boxm">
+		<h2 class="name">PRODUTO</h2>
+		<a href="#" class="buy">Compre Agora</a>
+		<div class="circle"></div>
+		<img src="img/cap5.png" class="product">
+	</div>
+</div>
+</div>
+
+<script src="vanilla-tilt.min.js"></script>
+<script>
+	
+VanillaTilt.init(document.querySelectorAll(".boxm"), {
+		max: 25,
+		speed: 400
+	});
+	
+	//It also supports NodeList/*
+
+//	VanillaTilt.init(document.querySelectorAll(".your-element"));
+
+
+</script>
+</body>
+</html>
